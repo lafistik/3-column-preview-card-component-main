@@ -1,3 +1,18 @@
+:root {
+  --clr-primary-500: hsl(31, 77%, 52%);
+  --clr-primary-700: hsl(184, 100%, 22%);
+  --clr-primary-800: hsl(179, 100%, 13%);
+
+  --clr-neutral-150: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-100: hsl(0, 0%, 95%);
+
+  --fs-regular: 0.9375rem;
+  --ff-heading: "Big Shoulders Display", cursive;
+  --ff-regular: "Lexend Deca", sans-serif;
+  --fw-regular: 400;
+  --fw-heading: 700;
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -15,8 +30,17 @@ body {
   height: 100%;
 }
 body {
+  display: grid;
+  place-content: center;
+
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-regular);
+  color: var(--clr-neutral-150);
+  background-color: var(--clr-neutral-100);
 }
 img,
 picture,
@@ -40,4 +64,85 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+/* GENERAL STYLES */
+
+.card {
+  display: grid;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 900px;
+}
+
+.card__car-info {
+  padding: 2.5rem;
+}
+
+.card__car-heading {
+  font-family: var(--ff-heading);
+  text-transform: uppercase;
+  font-size: 2.25rem;
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-heading);
+  margin-block: 2rem;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.btn {
+  margin-top: 1.5rem;
+  border: 1px solid transparent;
+  padding: 0.75rem 2rem;
+  border-radius: 100rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:is(:hover, :focus) {
+  color: var(--clr-neutral-100);
+  background-color: transparent;
+  border-color: var(--clr-neutral-100);
+}
+
+@media (min-width: 46.25em) {
+  .card {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  .card__car-info {
+    padding: 2.8125rem;
+  }
+
+  .btn {
+    margin-top: 4.5rem;
+  }
+}
+
+/* HELPER CLASSES */
+
+.bg-primary-500 {
+  background-color: var(--clr-primary-500);
+}
+
+.bg-primary-700 {
+  background-color: var(--clr-primary-700);
+}
+
+.bg-primary-800 {
+  background-color: var(--clr-primary-800);
+}
+
+.clr-primary-500 {
+  color: var(--clr-primary-500);
+}
+
+.clr-primary-700 {
+  color: var(--clr-primary-700);
+}
+
+.clr-primary-800 {
+  color: var(--clr-primary-800);
 }
